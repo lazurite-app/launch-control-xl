@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "babelify": "^6.1.2",
-    "generic-midi-controller": "^1.0.1"
+    "generic-midi-controller": "^1.0.3"
   },
   "devDependencies": {
     "babel": "^5.5.8",
