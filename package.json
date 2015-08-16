@@ -1,0 +1,44 @@
+{
+  "name": "launch-control-xl",
+  "version": "1.0.0",
+  "description": "Web MIDI wrapper for Novation Launch Control XL (http://global.novationmusic.com/launch/launch-control-xl)",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "budo demo.js"
+  },
+  "author": {
+    "name": "Hugh Kennedy",
+    "email": "hughskennedy@gmail.com",
+    "url": "http://hughsk.io/"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "dependencies": {
+    "babelify": "^6.1.2",
+    "generic-midi-controller": "^1.0.1"
+  },
+  "devDependencies": {
+    "budo": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lazurite-app/launch-control-xl.git"
+  },
+  "keywords": [
+    "launch",
+    "control",
+    "xl",
+    "novation",
+    "web",
+    "midi",
+    "controller"
+  ],
+  "homepage": "https://github.com/lazurite-app/launch-control-xl",
+  "bugs": {
+    "url": "https://github.com/lazurite-app/launch-control-xl/issues"
+  }
+}
