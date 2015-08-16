@@ -2,10 +2,12 @@
   "name": "launch-control-xl",
   "version": "1.0.0",
   "description": "Web MIDI wrapper for Novation Launch Control XL (http://global.novationmusic.com/launch/launch-control-xl)",
-  "main": "index.js",
+  "main": "bundle.js",
+  "browser": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "budo demo.js"
+    "start": "budo demo.js",
+    "prepublish": "babel index.js -o bundle.js"
   },
   "author": {
     "name": "Hugh Kennedy",
@@ -22,6 +24,7 @@
     "generic-midi-controller": "^1.0.1"
   },
   "devDependencies": {
+    "babel": "^5.5.8",
     "budo": "^4.0.0"
   },
   "repository": {
