@@ -1,6 +1,6 @@
 {
   "name": "launch-control-xl",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Web MIDI wrapper for Novation Launch Control XL (http://global.novationmusic.com/launch/launch-control-xl)",
   "main": "bundle.js",
   "browser": "index.js",
