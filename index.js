@@ -1,7 +1,8 @@
 import GenericMIDIController from 'generic-midi-controller'
 
-export default function LaunchControlXL () {
+export default function LaunchControlXL (opts = {}) {
   const controller = GenericMIDIController(inputs(), outputs())
+  const bank = (opts.bank || 1) - 1
 
   controller.reset = reset
 
@@ -45,7 +46,7 @@ export default function LaunchControlXL () {
     function map (id) {
       return msg => {
         if (msg[1] !== id) return
-        if (msg[0] !== 152 && msg[0] !== 136) return
+        if (msg[0] !== 152 + bank && msg[0] !== 136 + bank) return
         return msg[2]
       }
     }
@@ -53,7 +54,7 @@ export default function LaunchControlXL () {
     function smooth (id) {
       return msg => {
         if (msg[1] !== id) return
-        if (msg[0] !== 184) return
+        if (msg[0] !== 184 + bank) return
         return msg[2]
       }
     }
@@ -77,12 +78,12 @@ export default function LaunchControlXL () {
     }
 
     function btn (id) {
-      return (value, send) => send([152, id, value])
+      return (value, send) => send([152 + bank, id, value])
     }
 
     function knob (id) {
       return (value, send) => send([
-        240, 0, 32, 41, 2, 17, 120, 8, id, value, 247
+        240, 0, 32, 41, 2, 17, 120, 8 + bank, id, value, 247
       ])
     }
   }

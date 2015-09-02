@@ -13,12 +13,22 @@ Web MIDI wrapper for [Novation Launch Control XL](http://global.novationmusic.co
 Built on top of [generic-midi-controller](https://github.com/lazurite-app/generic-midi-controller), and as such shares a very similar API, with a few small differences:
 
 * A `.reset()` method has been added to trigger a board reset.
-* Inputs/outputs are configured for you to match the Launch Control XL's Factory Device Bank 1:
+* Inputs/outputs are configured for you to match the Launch Control XL's Factory Device Banks:
   * `input.buttons[0-15]`
   * `input.faders[0-7]`
   * `input.knobs[0-23]`
   * `output.buttons[0-15]` for controlling the bottom button LEDs.
   * `output.knobs[0-23]` for controlling the knob LEDs.
+
+You may also pass in a custom `bank` number between 1 and 8 to hook into the
+other factory device banks, utilising the full range of available inputs:
+
+``` javascript
+const LaunchControlXL = require('launch-control-xl')
+const controller = new LaunchControlXL({ bank: 2 })
+```
+
+This defaults to Factory Device Bank 1.
 
 See [demo.js](./demo.js) for example usage.
 
